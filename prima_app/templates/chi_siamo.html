@@ -7,7 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Chi siamo</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate facilis quidem temporibus obcaecati, possimus cupiditate nisi exercitationem, quae tempore officia architecto nostrum nihil similique dolores, illo soluta neque iusto expedita!</p>
+    {% extends 'base.html' %}
+
+    {% block title %}{{block.super}}|Chi siamo{% endblock title %}
+
+    {% block content %}
+        <h1>Chi siamo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate facilis quidem temporibus obcaecati, possimus cupiditate nisi exercitationem, quae tempore officia architecto nostrum nihil similique dolores, illo soluta neque iusto expedita!</p>
+    {% endblock content %}
+    
 </body>
 </html>

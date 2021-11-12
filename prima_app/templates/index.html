@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    {% extends 'base.html' %}
+
+    {% block title %}{{block.super}}|Chi siamo{% endblock title %}
+
+    {% block content %}
     <ol>
         <li><a href="{% url 'prima_app:homepage' %}">Homepage di benvenuto</a></li>
         <li><a href="{% url 'prima_app:lista' %}">Lista</a></li>
@@ -17,5 +24,7 @@
         <li><a href="{% url 'seconda_app:es_if' %}">Es if</a></li>
         <li><a href="{% url 'seconda_app:if_else_elif' %}">If else elif</a></li>
     </ol>
+    {% endblock content %}
 </body>
+
 </html>

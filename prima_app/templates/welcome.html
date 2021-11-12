@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>welcome</h1>
+{% extends 'base.html' %}
+
+    {% block title %}{{block.super}}|Welcome{% endblock title %}
+
+    {% block content %}
+        <h1>welcome</h1>
+    {% endblock content %}
+    
 </body>
 </html>
