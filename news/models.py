@@ -16,3 +16,10 @@ class Articolo(models.Model):
 
     def __str__(self):
         return self.titolo
+
+class Meta:
+    verbose_name="Giornalista"
+    varbose_name_plural="Giornalisti"
+class Meta:
+    verbose_name="Articolo"
+    varbose_name_plural="Articoli"
