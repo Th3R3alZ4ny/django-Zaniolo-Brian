@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,14 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
 </head>
+
 <body>
     <div class="navigation">
         <ul>
@@ -27,6 +35,14 @@
                     </span>
                     <span class="text">Prima App</span>
                 </a>
+                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'prima_app:homepage' %}">Homepage</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:chi_siamo' %}">Chi Siamo</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:index' %}">Index</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:lista' %}">Lista</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:variabili' %}">Variabili</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:welcome' %}">Welcome</a>
+                  </div>
             </li>
             <li class="list">
                 <a href="#">
@@ -46,17 +62,19 @@
             </li>
             <div class="indicator"></div>
         </ul>
-        
+
     </div>
     <script>
-        const list=document.querySelectorAll('.list');
-        function activelink(){
-            list.forEach((item)=>
-            item.classList.remove('active'));
+        const list = document.querySelectorAll('.list');
+        
+        function activelink() {
+            list.forEach((item) =>
+                item.classList.remove('active'));
             this.classList.add('active');
         }
-        list.forEach((item)=>
-        item.addEventListener('click',activelink));
+        list.forEach((item) =>
+            item.addEventListener('click', activelink));
     </script>
 </body>
+
 </html>
