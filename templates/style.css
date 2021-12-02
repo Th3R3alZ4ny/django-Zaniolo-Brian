@@ -32,7 +32,8 @@ body /*style per il body*/
 .navigation ul
 {
     display: flex;
-    width: 350px;
+    width: auto;
+    margin-left: 10px;
 }
 .navigation ul li
 {
@@ -133,8 +134,44 @@ body /*style per il body*/
 .navigation ul li:nth-child(4).active ~ .indicator
 {
     transform: translateX(calc(70px*3));
+
 }
 .navigation ul li .dropdown-menu
+{   
+    background: white;
+    position: absolute;
+    width: 110px;
+    border-radius: 10px;
+    margin-left: -20px;
+    animation: animazioneDrop 0.5s;
+}
+.navigation ul li .dropdown-menu a 
 {
-    visibility: hidden;
+    color: black;
+}
+.container-content
+{
+    background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
+    position: absolute;
+    top: 120px;
+    align-self: center;
+    color: white;
+    margin-left: 15px;
+}
+@keyframes animazioneDrop {
+    0% {
+        margin-top: -15px;
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+#mezzeria {
+    position:absolute;
+    width:2px;
+    height:100vh;
+    background-color: red;
+    left:50vw;
+    top:0;
+    transform: translateX(-50%);
 }
