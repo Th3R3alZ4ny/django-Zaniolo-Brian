@@ -9,7 +9,7 @@
 }
 :root
 {
-    --clr: #222327;
+    --clr: white;
 }
 body /*style per il body*/
 {
@@ -24,7 +24,7 @@ body /*style per il body*/
     position: relative;
     width: 100%;
     height: 70px;
-    background: #fff;
+    background: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,7 +90,7 @@ body /*style per il body*/
     top: -50%;
     width: 70px;
     height: 70px;
-    background: #29fd53;
+    background: darkgreen;
     border-radius: 50%;
     border: 6px solid var(--clr);
     transition: 0.5s;
@@ -138,7 +138,7 @@ body /*style per il body*/
 }
 .navigation ul li .dropdown-menu
 {   
-    background: white;
+    background: lightgray;
     position: absolute;
     width: 110px;
     border-radius: 10px;
@@ -151,11 +151,10 @@ body /*style per il body*/
 }
 .container-content
 {
-    background: linear-gradient(90deg, #FFC0CB 50%, #00FFFF 50%);
     position: absolute;
     top: 120px;
     align-self: center;
-    color: white;
+    color: black;
     margin-left: 15px;
 }
 @keyframes animazioneDrop {
@@ -165,13 +164,4 @@ body /*style per il body*/
     100%{
         transform: translateY(0px);
     }
-}
-#mezzeria {
-    position:absolute;
-    width:2px;
-    height:100vh;
-    background-color: red;
-    left:50vw;
-    top:0;
-    transform: translateX(-50%);
 }
