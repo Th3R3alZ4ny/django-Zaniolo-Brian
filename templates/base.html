@@ -71,6 +71,15 @@
                     <a class="dropdown-item" href="{% url 'news:lista_giornalisti' %}">Giornalisti</a>
                   </div>
             </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="game-controller-outline"></ion-icon>
+                    </span>
+                    <span class="text">Games</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
+            </li>
             <div class="indicator"></div>
         </ul>
     </div>
@@ -82,12 +91,14 @@
     </div>
     <script>
         const list = document.querySelectorAll('.list');
-        
+        console.log(list);
         function activelink() {
             Array.from(document.getElementsByClassName('dropdown-menu')).forEach((itemD) =>
             itemD.hidden=true);
+
             Array.from(document.getElementsByClassName('dropdown-menu')).forEach((itemD) =>
             itemD.hidden=true);
+
             list.forEach((item) =>
                 item.classList.remove('active'));
             this.classList.add('active');
