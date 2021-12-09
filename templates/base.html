@@ -78,7 +78,9 @@
                     </span>
                     <span class="text">Games</span>
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'JSgames:chessGame' %}">Scacchi</a>
+                </div>
             </li>
             <div class="indicator"></div>
         </ul>
@@ -91,7 +93,6 @@
     </div>
     <script>
         const list = document.querySelectorAll('.list');
-        console.log(list);
         function activelink() {
             Array.from(document.getElementsByClassName('dropdown-menu')).forEach((itemD) =>
             itemD.hidden=true);

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'JSgames',
     'news',
     'prima_app',
     'seconda_app',
@@ -61,7 +62,8 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'prima_app/templates'),
                  os.path.join(BASE_DIR, 'seconda_app/templates'),
                  os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'news/templates')],
+                 os.path.join(BASE_DIR, 'news/templates'),
+                 os.path.join(BASE_DIR, 'JSgames/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
