@@ -793,7 +793,6 @@ var Chess = function (fen) {
   }
 
   function in_checkmate() {
-    alert("Checkmate");
     return in_check() && generate_moves().length === 0
   }
 
