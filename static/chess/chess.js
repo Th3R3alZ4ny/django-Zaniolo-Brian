@@ -1381,6 +1381,23 @@ var Chess = function (fen) {
     },
 
     game_over: function () {
+      if (half_moves >= 100 ||
+        in_checkmate() ||
+        in_stalemate() ||
+        insufficient_material() ||
+        in_threefold_repetition()) {
+        if (half_moves >= 100) {
+          return 1;
+        }else if (in_checkmate()) {
+          return [2,turn];
+        }else if (in_stalemate()) {
+          return 3;
+        }else if (insufficient_material()) {
+          return 4;
+        }else if (in_threefold_repetition()) {
+          return 5;
+        }
+      }
       return (
         half_moves >= 100 ||
         in_checkmate() ||
