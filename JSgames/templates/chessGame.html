@@ -26,7 +26,6 @@
 <body>
     {% block content %}
     <div id="myBoard" style="width:500px"></div>
-    <button id="clearBtn">Clear Board</button>
 
     <script type="module">
         import Chess from "{% static "chess/chess.js" %}"
@@ -82,7 +81,6 @@
             onSnapEnd: onSnapEnd
         }
         board = Chessboard('myBoard', config)
-        $('#clearBoardBtn').on('click', board.clear)
         document.getElementById("myBoard").addEventListener('click', function(){
             if (game.game_over() == 1){
                 Swal.fire("Parità", "Non sono state catturate pedine negli ultimi 50 turni", "warning");
