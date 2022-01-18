@@ -10,12 +10,14 @@
     {% extends 'base.html' %}
 
     {% block content %}
-    <h3 style="margin-left:-50px">Giuseppe Gullo:</h3>
-        
-        {% for x in voti %}
-            pprint(voti)
-        {% endfor %}
-        
+        <ul>
+            <h3 style="margin-left:-50px">Giuseppe Gullo:</h3>
+            <li>{{GiuseppeGullo}}</li>
+            <h3 style="margin-left:-50px">Antonio Barbera:</h3>
+            <li>{{AntonioBarbera}}</li>
+            <h3 style="margin-left:-50px">Nicola Spina:</h3>
+            <li>{{NicolaSpina}}</li>
+        </ul>
     {% endblock %}
 </body>
 </html>
