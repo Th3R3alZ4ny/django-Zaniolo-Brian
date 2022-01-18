@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from lib2to3.pytree import Base
 from pathlib import Path
 import os
 
@@ -32,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'prova_pratica_1',
     'JSgames',
     'news',
     'prima_app',
@@ -63,7 +65,8 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'seconda_app/templates'),
                  os.path.join(BASE_DIR, 'templates'),
                  os.path.join(BASE_DIR, 'news/templates'),
-                 os.path.join(BASE_DIR, 'JSgames/templates')],
+                 os.path.join(BASE_DIR, 'JSgames/templates'),
+                 os.path.join(BASE_DIR, 'prova_pratica_1/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
