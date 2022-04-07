@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <div id="content">
+        <h2 style="margin-left:-50px">Materie:</h2>
+    </div>
+    <script>
+        (async function() {
+            const data= await fetch("{% url 'prova_pratica_1:lista_materie' %}")
+            const ris=await data.json();
+            document.getElementById("content").innerHTML+="<ul><li>"+ris['m1']+"</li><li>"+ris['m2']+"</li><li>"+ris['m3']+"</li><li>"+ris['m4']+"</li><li>"+ris['m5']+"</li></ul>";
+        })();
+    </script>
+    {% endblock %}
+</body>
+</html>

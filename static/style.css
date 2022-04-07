@@ -143,6 +143,10 @@ body /*style per il body*/
 {
     transform: translateX(calc(70px*5));
 }
+.navigation ul li:nth-child(7).active ~ .indicator
+{
+    transform: translateX(calc(70px*6));
+}
 .navigation ul li .dropdown-menu
 {   
     background: lightgray;

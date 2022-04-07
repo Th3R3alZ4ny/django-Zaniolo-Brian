@@ -1,5 +1,8 @@
 from multiprocessing import context
+from urllib import response
+from django.http import JsonResponse
 from django.shortcuts import render
+
 # Create your views here.
 def view_b(request):
     materie={
@@ -17,3 +20,15 @@ def view_c(request):
         'NicolaSpina':[("Matematica",7.5,2),("Italiano",6,2),("Inglese",4,3),("Storia",8.5,2),("Geografia",8,2)]
     }
     return render(request,"view_c.html",context)
+def lista_materie(request):
+    lista={
+        'm1':"Matematica",
+        'm2':"Italiano",
+        'm3':"Inglese",
+        'm4':"Storia",
+        'm5':"Geografia"
+    }
+    response= JsonResponse(lista)
+    return response
+def json_version(request):
+    return render(request,"json_version.html")
