@@ -131,3 +131,11 @@ ul li:nth-child(6).active ~ .marker::before
     0 0 45px var(--Colore6),
     0 0 60px var(--Colore6)
 }
+.container-content
+{
+    position: absolute;
+    top: 120px;
+    align-self: center;
+    color: black;
+    margin-left: 15px;
+}
