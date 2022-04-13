@@ -6,10 +6,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glass Card</title>
+    <title>Index</title>
+    
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="{% static 'GlassMenu.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -20,41 +22,121 @@
 </head>
 
 <body>
-    <ul>
-        <li class="active"><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
-        <li><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
-        <li><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
-        <li><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
-        <li><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
-        <li><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
-        <div class="marker"></div>
-    </ul>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="/">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                </a>
+                <div class="dropdown-menu"></div>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="apps-outline"></ion-icon>
+                    </span>
+                    <span class="text">Prima App</span>
+                </a>
+                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'prima_app:homepage' %}">Homepage</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:chi_siamo' %}">Chi Siamo</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:index' %}">Index</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:lista' %}">Lista</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:variabili' %}">Variabili</a>
+                    <a class="dropdown-item" href="{% url 'prima_app:welcome' %}">Welcome</a>
+                  </div>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="apps-outline"></ion-icon>
+                    </span>
+                    <span class="text">Seconda App</span>
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'seconda_app:es_for' %}">Es for</a>
+                    <a class="dropdown-item" href="{% url 'seconda_app:es_if' %}">Es if</a>
+                    <a class="dropdown-item" href="{% url 'seconda_app:if_else_elif' %}">If else elif</a>
+                </div>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="apps-outline"></ion-icon>
+                    </span>
+                    <span class="text">News</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'news:lista_articoli' %}">Articoli</a>
+                    <a class="dropdown-item" href="{% url 'news:lista_giornalisti' %}">Giornalisti</a>
+                  </div>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="game-controller-outline"></ion-icon>
+                    </span>
+                    <span class="text">Games</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'JSgames:chessGame' %}">Scacchi</a>
+                </div>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="document-outline"></ion-icon>
+                    </span>
+                    <span class="text">Prova Pratica 1</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'prova_pratica_1:view_b' %}">View B</a>     
+                    <a class="dropdown-item" href="{% url 'prova_pratica_1:view_c' %}">View C</a>
+                    <a class="dropdown-item" href="{% url 'prova_pratica_1:json_version' %}">Json Version</a>
+                </div>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="document-outline"></ion-icon>
+                    </span>
+                    <span class="text">API</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'prova_pratica_1:lista_materie' %}">Lista Materie</a>     
+                </div>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+    <br>
     <div class="container-content">
-        <div class="container my-4">
-            {% block content %}{% endblock content %}
-        </div>
+    <div class="container my-4">
+        {% block content %}{% endblock content %}
+    </div>
+    </div>
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activelink() {
+            Array.from(document.getElementsByClassName('dropdown-menu')).forEach((itemD) =>
+            itemD.hidden=true);
+
+            Array.from(document.getElementsByClassName('dropdown-menu')).forEach((itemD) =>
+            itemD.hidden=true);
+
+            list.forEach((item) =>
+                item.classList.remove('active'));
+            this.classList.add('active');
+            document.getElementsByClassName('list active').item(0).children[1].hidden=false;
+        }
+        list.forEach((item) =>
+            item.addEventListener('click', activelink));
+        Array.from(document.getElementsByClassName('dropdown-menu')).forEach((itemD) =>
+            itemD.hidden=true);
+    </script>
 </body>
-<script>
-    let marker=document.querySelector('.marker');
-    let list=document.querySelectorAll('ul li');
 
-    function moveIndicator(e){
-        marker.style.left=e.offsetLeft+'px';
-        marker.style.width=e.offsetWidth+'px';
-    }
-
-    list.forEach(link => {
-        link.addEventListener('mousemove', (e) => {
-            moveIndicator(e.target);
-        })
-    })
-
-    function activeLink(){
-        list.forEach((item)=>
-        item.classList.remove('active'));
-        this.classList.add('active');
-    }
-    list.forEach((item)=>
-    item.addEventListener('mouseover',activeLink));
-</script>
 </html>
